@@ -8,34 +8,21 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/ruta2', 'Home::Mruta2');
 
-/*$routes->get('/(:any)
-(:segment)
-(:num)
-(:alpanum)
-(:hash)
-', 'CSuma::MSumar');*/
-
-// http://localhost/ProyectoDWf2/rutaurl/3
+// Rutas para la calculadora
 $routes->get('/rutaurl/3', 'CSuma::MSumar');
-// http://localhost/ProyectoDWf2/rutaurl/(:num)
-$routes->get('/rutaurl/(:any)', 
-'CSuma::MSumarVariable/$1');
-
+$routes->get('/rutaurl/(:any)', 'CSuma::MSumarVariable/$1');
 $routes->post('/resultado', 'CSuma::MPostSuma');
 
-
+// Rutas para la gestión de usuarios
 $routes->get('/testconexion', 'CBdd::testconexion');
 $routes->get('/insertusuario', 'CBdd::MetodoVerFormularioUsuario');
-// Esta es la ruta post para crear
 $routes->post('/UsuarioCreado', 'CBdd::MetodoInsertarUsuario');
 
+// Rutas para mostrar resultados
+$routes->get('VResultado', 'CBdd::VResultado');
+$routes->post('CBdd/MPostSuma', 'CBdd::MPostSuma');
+$routes->get('CBdd/VResultado', 'CBdd::VResultado');
+$routes->post('CBdd/guardarResultado', 'CBdd::guardarResultado');
 
-
-
-
-
-
-
-
-
+// Ruta para seleccionar usuarios
 $routes->get('/Select', 'ControladorSelect::SelectUsuarioFC');

@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class ModeloUsuario extends Model
 {
+    // Método para insertar un nuevo usuario en la base de datos
     public function MetodoModeloInsertUsuario($Parametrosdelcontrolador)
     {
         try {

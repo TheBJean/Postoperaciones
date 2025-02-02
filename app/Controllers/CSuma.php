@@ -8,12 +8,14 @@ use CodeIgniter\HTTP\ResponseInterface;
 //php spark make:controller CSuma
 class CSuma extends BaseController
 {
+    // Método para mostrar la vista de suma
     public function MSumar()
     {
         $vistas = view('VSuma') . view('footer');
         return $vistas;
     }
 
+    // Método para manejar la lógica de suma basada en una variable
     public function MSumarVariable($variable1)
     {
         if ($variable1 == "zap") {
@@ -23,6 +25,7 @@ class CSuma extends BaseController
         }
     }
 
+    // Método para procesar la suma
     public function MPostSuma()
     {
         // Obtener los números del formulario
@@ -68,6 +71,7 @@ class CSuma extends BaseController
         ]);
     }
 
+    // Método para actualizar la operación
     public function updateOperation()
     {
         // Obtener los números y la operación desde la solicitud

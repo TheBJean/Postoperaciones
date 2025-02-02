@@ -9,14 +9,15 @@ use PhpParser\Node\Expr\Print_;
 
 class ControladorSelect extends BaseController
 {
+    // Método para seleccionar y mostrar todos los usuarios
     public function SelectUsuarioFC()
     {
-        // objeto que tiene todos los metodos de la hoja modelo
+        // Crear una instancia del modelo
         $instanciaobjeto = new ModeloSelect();
-        // en una variable se almacena los datos de la funcion modelo
-
+        // Obtener los datos de la función del modelo
         $datoscontrolador = $instanciaobjeto->SelectUsuarioFC();
 
-        Print_r($datoscontrolador);
+        // Mostrar los datos obtenidos
+        print_r($datoscontrolador);
     }
 }

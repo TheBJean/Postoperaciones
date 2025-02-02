@@ -13,10 +13,10 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">
-                <h1>Operacion con POST</h1>
+                <h1>Operaciones con POST</h1>
             </div>
             <div class="card-body">
-                <form id="sumForm" action="<?php echo base_url() ?>resultado" method="post" onsubmit="return validateForm()">
+                <form id="sumForm" action="<?= base_url('CBdd/MPostSuma') ?>" method="post">
                     <div class="mb-3">
                         <label for="num1" class="form-label">Número 1:</label>
                         <input id="num1" name="vNum1" type="number" class="form-control" required>
@@ -45,8 +45,21 @@
         </div>
     </div>
 
-    <script src="public/vsuma.js"></script>
-    
+    <script>
+        // Función para validar el formulario antes de enviarlo
+        function validateForm() {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+            const num3 = document.getElementById('num3').value;
+            const operacion = document.getElementById('operacion').value;
+
+            if (!num1 || !num2 || !num3 || !operacion) {
+                alert('Por favor, complete todos los campos.');
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 
 </html>
